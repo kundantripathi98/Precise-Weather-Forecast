@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Precise Weather Forecast</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favIcon.png" type="image/x-icon">
 </head>
 <body>
     
@@ -13,10 +14,10 @@
 
         <section class="sidebar">
 
-            <form class="search" id="search">
-              <input type="text" id="query" placeholder="Search..." />
-              <button><i class="fas fa-search"></i></button>
-            </form>
+          <form class="search" id="search">
+            <input type="text" id="query" placeholder="Search..." />
+            <button><i class="fas fa-search"></i></button>
+          </form>
 
             <div class="weather-icon">
               <img id="icon" src="icons/sun/4.png" alt="" />
@@ -36,12 +37,16 @@
             <div class="condition-rain">
               <div class="condition">
                 <i class="fas fa-cloud"></i>
-                <p id="condition">condition</p>
+                <div>
+                  <p id="condition">condition</p>
+                  <p id="description"></p>
+                </div>
+                
               </div>
 
               <div class="rain">
                 <i class="fas fa-tint"></i>
-                <p id="rain">perc - 0%</p>
+                <p id="precipitation">perc - 0%</p>
               </div>
             </div>
 
@@ -74,27 +79,35 @@
             <div class="highlights">
               <h2 class="heading">today's highlights</h2>
               <div class="cards">
+
                 <div class="card2">
                   <h4 class="card-heading">UV Index</h4>
                   <div class="content">
-                    <p class="uv-index">10</p>
+                    <p class="uv-index">0</p>
                     <p class="uv-text">Low</p>
                   </div>
                 </div>
   
                 <div class="card2">
-                  <h4 class="card-heading">Wind Status</h4>
+                  <h4 class="card-heading">Feels Like</h4>
                   <div class="content">
-                    <p class="wind-speed">20</p>
-                    <p>km/h</p>
+                    <p class="feelslike">0</p>
+                  </div>
+                </div>
+
+                <div class="card2">
+                  <h4 class="card-heading">Wind Speed & Direction</h4>
+                  <div class="content">
+                    <p class="wind-speed">0</p>
+                    <p class="wind-direction"></p>
                   </div>
                 </div>
   
                 <div class="card2">
                   <h4 class="card-heading">Sunrise & Sunset</h4>
                   <div class="content">
-                    <p class="sun-rise">30</p>
-                    <p class="sun-set">40</p>
+                    <p class="sun-rise">0</p>
+                    <p class="sun-set">0</p>
                   </div>
                 </div>
   
@@ -109,23 +122,23 @@
                   <div class="card2">
                     <h4 class="card-heading">Visibility</h4>
                     <div class="content">
-                      <p class="visibilty">0</p>
+                      <p class="visibility">0</p>
                       <p class="visibilty-status">Normal</p>
                     </div>
                   </div>
     
-                  <div class="card2">
+                  <!-- <div class="card2">
                     <h4 class="card-heading">Air Quality</h4>
                     <div class="content">
                       <p class="air-quality">0</p>
                       <p class="air-quality-status">Normal</p>
                     </div>
-                  </div>
+                  </div> -->
   
               </div>
             </div>
   
-            <p class="credits">Crafted with ❤️ by <a href="https://youtu.be/A2ianP1cG98">Open Source Coding</a></p>
+           
           </section>
   
       </div>
