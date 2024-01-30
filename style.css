@@ -292,9 +292,3 @@ img {
   text-align: center;
   font-size: 30px;
 }
-
-.card2 .content p:nth-child(2) {
-  font-size: 12px;
-  margin-top: 20px;
-  text-align: left;
-}
