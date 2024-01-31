@@ -252,7 +252,25 @@ let getHumidityStatus = (data)=>{
       }
 }
 
-
+let getVisibilityStatus = (data)=>{
+  if (data <= 0.03) {
+    visibilityStatus.innerText = "Dense Fog";
+  } else if (data <= 0.16) {
+    visibilityStatus.innerText = "Moderate Fog";
+  } else if (data <= 0.35) {
+    visibilityStatus.innerText = "Light Fog";
+  } else if (data <= 1.13) {
+    visibilityStatus.innerText = "Very Light Fog";
+  } else if (data <= 2.16) {
+    visibilityStatus.innerText = "Light Mist";
+  } else if (data <= 5.4) {
+    visibilityStatus.innerText = "Very Light Mist";
+  } else if (data <= 10.8) {
+    visibilityStatus.innerText = "Clear Air";
+  } else {
+    visibilityStatus.innerText = "Very Clear Air";
+  }
+}
 
 // function to get weather data
 // function getWeatherData(city, unit, hourlyorWeek) {
