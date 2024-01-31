@@ -240,7 +240,17 @@ let getWindDirection = (data)=>{
   }
 }
 
-
+let getHumidityStatus = (data)=>{
+      if (humidity <= 30) {
+        humidityStatus.innerText = "Low";
+      }
+       else if (humidity <= 60) {
+        humidityStatus.innerText = "Moderate";
+      }
+       else {
+        humidityStatus.innerText = "High";
+      }
+}
 
 let getVisibilityStatus = (data)=>{
   if (data <= 0.03) {
