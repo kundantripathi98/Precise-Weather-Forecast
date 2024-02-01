@@ -74,7 +74,7 @@ setInterval(() => {
         }
       },
       (error)=>{
-        console.log(error.message);
+        alert("Sorry, If you don't give us your location, then we can't give you Weather data of your location!!");
       }
     );
    }
