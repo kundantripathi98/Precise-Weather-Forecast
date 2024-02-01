@@ -44,47 +44,68 @@ setInterval(() => {
 
 
 // function to get public ip address
-(async ()=>{
-    try {
-        let response = await fetch("https://geolocation-db.com/json/");
-        let data = await response.json();
-      console.log(data.city);
-        currentCity = "diu";
+// (async ()=>{
+//     try {
+//         let response = await fetch("https://geolocation-db.com/json/");
+//         let data = await response.json();
+//       console.log(data.city);
+//         currentCity = data.city;
 
-        getWeatherData(currentCity, currentUnit, hourlyorWeek);
-    } catch (error) {
-        console.log(error);
-    }
+//         getWeatherData(currentCity, currentUnit, hourlyorWeek);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// })()
+
+(()=>{
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      async (position)=>{
+        let {latitude, longitude} = position.coords;
+        let city = await getUserLocation(latitude,longitude);
+        try {
+          console.log(city);
+          currentCity = city;
+
+          getWeatherData(currentCity, currentUnit, hourlyorWeek);
+        }
+         catch (error) {
+          console.log(error.message);
+        }
+      },
+      (error)=>{
+        console.log(error.message);
+      }
+    );
+   }
 })()
 
+let getUserLocation = async (latitude, longitude)=>{
+  const apiKey = "36b3b759622f4599ae29b81e21b29520",
+  apiEndPoint = "https://api.opencagedata.com/geocode/v1/json?",
+  apiUrl = `${apiEndPoint}key=${apiKey}&q=${latitude},${longitude}&pretty=1`;
+      try {
+        let response = await fetch(apiUrl);
+        let data = await response.json();
+        return data.results[0].components.city;
+      }
+       catch (error) {
+        console.log(error.message);
+      }
 
-    btn.addEventListener("click", (e)=>{
-e.preventDefault();
-         if(navigator.geolocation){
-          navigator.geolocation.getCurrentPosition(
-            (position)=>{
-              let {latitude, longitude} = position.coords;
-              console.log(latitude);
-              console.log(longitude);
-            },
-            (error)=>{
-              console.log(error.message);
-            }
-          );
-         }
-    });
+}
 
 
 async function getWeatherData(city, unit, hourlyorWeek) {
   const apiKey = "VVCLEC6YQPGRPE9WNFKBCHW6M";
-  const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/sahibabad?unitGroup=metric&key=${apiKey}`;
+  const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Ghaziabad?unitGroup=metric&key=${apiKey}`;
 
   let response = await fetch(apiUrl);
   let data = await response.json();
 
   try {
     let today = data.currentConditions;
-    console.log(data);
+    // console.log(data);
     // console.log(today.icon);
     if (currentUnit === "C") {
       temp.innerText = `${today.temp}`;
