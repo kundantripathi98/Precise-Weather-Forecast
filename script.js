@@ -48,8 +48,8 @@ setInterval(() => {
     try {
         let response = await fetch("https://geolocation-db.com/json/");
         let data = await response.json();
-
-        currentCity = data.city;
+      console.log(data.city);
+        currentCity = "diu";
 
         getWeatherData(currentCity, currentUnit, hourlyorWeek);
     } catch (error) {
@@ -58,27 +58,24 @@ setInterval(() => {
 })()
 
 
-    // btn.addEventListener("click", (e)=>{
-    //   e.preventDefault();
-    //   getWeatherData(search.value, currentUnit, hourlyorWeek);
-    
-    //   search.value = "";
-    // });
-    
-    // search.addEventListener("keypress", (e)=>{
-    //   if(e.key== "Enter"){
-    //     btn.click();
-    //     search.value = "";
-    //   }
-    // })
-
-   
-    
+    btn.addEventListener("click", (e)=>{
+e.preventDefault();
+         if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(
+            (position)=>{
+              console.log(position);
+            },
+            (error)=>{
+              console.log(error.message);
+            }
+          );
+         }
+    });
 
 
 async function getWeatherData(city, unit, hourlyorWeek) {
   const apiKey = "VVCLEC6YQPGRPE9WNFKBCHW6M";
-  const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey}`;
+  const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/sahibabad?unitGroup=metric&key=${apiKey}`;
 
   let response = await fetch(apiUrl);
   let data = await response.json();
