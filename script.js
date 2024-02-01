@@ -63,7 +63,9 @@ e.preventDefault();
          if(navigator.geolocation){
           navigator.geolocation.getCurrentPosition(
             (position)=>{
-              console.log(position);
+              let {latitude, longitude} = position.coords;
+              console.log(latitude);
+              console.log(longitude);
             },
             (error)=>{
               console.log(error.message);
@@ -101,7 +103,6 @@ async function getWeatherData(city, unit, hourlyorWeek) {
       fahrenheitBtn.style.color = "white";
       currentUnit = "F";
 
-      console.log(currentUnit);
       if (currentUnit === "C") {
         temp.innerText = `${today.temp}`;
         tempUnit.innerHTML = `° ${currentUnit}`;
@@ -121,7 +122,6 @@ async function getWeatherData(city, unit, hourlyorWeek) {
       celciusBtn.style.backgroundColor = "black";
       celciusBtn.style.color = "white";
       currentUnit = "C";
-      console.log(currentUnit);
 
       if (currentUnit === "C") {
         temp.innerText = `${today.temp}`;
