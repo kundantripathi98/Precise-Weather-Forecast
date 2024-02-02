@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precise Weather Forecast</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favIcon.png" type="image/x-icon">
 </head>
@@ -15,7 +16,7 @@
         <section class="sidebar">
 
           <form class="search" id="search">
-            <input type="text" id="query" placeholder="Search..." />
+            <input type="text" id="query" placeholder="Enter City name/pincode" />
             <button><i class="fas fa-search"></i></button>
           </form>
 
@@ -95,11 +96,26 @@
                   </div>
                 </div>
 
+                <div class="card2 c2">
+                  <h4 class="card-heading">Minimum & Maximum temperature</h4>
+                  <div class="content">
+                    <p class="min">0</p>
+                    <p class="max">0</p>
+                  </div>
+                </div>
+
                 <div class="card2">
                   <h4 class="card-heading">Wind Speed & Direction</h4>
                   <div class="content">
                     <p class="wind-speed">0</p>
                     <p class="wind-direction"></p>
+                  </div>
+                </div>
+
+                <div class="card2">
+                  <h4 class="card-heading">Cloud Cover</h4>
+                  <div class="content">
+                    <p class="cloudCover">0</p>
                   </div>
                 </div>
   
@@ -138,11 +154,33 @@
               </div>
             </div>
   
-           
+           <footer>
+              <h2><a href="https://www.instagram.com/creative_lad97/"  target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a></h2>
+              <h2><a href="https://github.com/kundantripathi98" target="_blank"><i class="fa-brands fa-github"></i>Github</a></h2>
+              <h2><a href="https://www.linkedin.com/in/kundan-tripathi-752440214/" target="_blank"><i class="fa-brands fa-linkedin"></i>Linkedin</a></h2>
+           </footer>
+
+           <!-- <div class="credits">
+            <h2><a href="">Instagram</a></h2>
+              <h2><a href="">Github</a></h2>
+              <h2><a href="">Linkedin</a></h2>
+           </div> -->
           </section>
   
       </div>
-
+      <!-- <script>
+        if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(
+            (position)=>{
+              console.log(position);
+            },
+            (error)=>{
+              console.log(error.message);
+            }
+            )
+        }
+      </script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
