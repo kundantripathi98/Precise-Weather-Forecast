@@ -745,14 +745,6 @@ function changeTimeSpan(unit) {
 }
 
 
-// gsap.from(".wrapper", {
-//   scale: 0,
-//   opacity: 0,
-//   ease: Power4,
-//   delay: 2,
-//   duration: 2
-// });
-
 let tl = gsap.timeline();
 
 tl.from(".wrapper", {
