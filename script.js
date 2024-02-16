@@ -44,7 +44,7 @@ setInterval(() => {
   date.innerText = getDateTime();
 }, 1000);
 
-
+//gjhfh
 
 // (async ()=>{
 //     try {
