@@ -45,7 +45,7 @@ setInterval(() => {
 }, 1000);
 
 
-// function to get public ip address
+
 // (async ()=>{
 //     try {
 //         let response = await fetch("https://geolocation-db.com/json/");
@@ -57,7 +57,7 @@ setInterval(() => {
 //     } catch (error) {
 //         console.log(error);
 //     }
-// })()
+//// })()hello
 
 (()=>{
   if(navigator.geolocation){
