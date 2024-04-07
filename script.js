@@ -1,5 +1,4 @@
  let temp = document.getElementById("temp"),
-
     date = document.getElementById("date-time"),
     condition = document.getElementById("condition"),
     description = document.getElementById("description"),
